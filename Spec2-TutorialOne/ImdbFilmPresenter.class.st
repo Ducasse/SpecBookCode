@@ -25,12 +25,11 @@ ImdbFilmPresenter >> directorText [
 
 { #category : #initialization }
 ImdbFilmPresenter >> initializePresenters [
-
 	nameText := self newTextInput.
 	directorText := self newTextInput.
-	yearNumber := self newNumberInput rangeMinimum: 1900 maximum:  Year current year; 
-					yourself
-	
+	yearNumber := self newNumberInput
+		rangeMinimum: 1900 maximum: Year current year;
+		yourself
 ]
 
 { #category : #accessing }

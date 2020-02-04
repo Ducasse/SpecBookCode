@@ -6,8 +6,28 @@ Class {
 		'director',
 		'year'
 	],
+	#classInstVars : [
+		'films'
+	],
 	#category : #'Spec2-TutorialOne'
 }
+
+{ #category : #testing }
+ImdbFilm class >> addFilm: aFilm [
+	films add: aFilm
+]
+
+{ #category : #testing }
+ImdbFilm class >> films [
+
+	^ films
+]
+
+{ #category : #testing }
+ImdbFilm class >> initialize [ 
+	
+	films := OrderedCollection new
+]
 
 { #category : #testing }
 ImdbFilm class >> isVoyageRoot [

@@ -1,3 +1,6 @@
+"
+(ImdbFilmListPresenter newApplication: ImdbApp new) openWithSpec
+"
 Class {
 	#name : #ImdbFilmListPresenter,
 	#superclass : #SpPresenter,
@@ -16,19 +19,20 @@ ImdbFilmListPresenter class >> defaultSpec [
 
 { #category : #initialization }
 ImdbFilmListPresenter >> addFilm [
-
-	| dialog | 
+	| dialog |
 	dialog := ImdbFilmPresenter newApplication: self application.
 	dialog openDialogWithSpec.
-	dialog isOk ifFalse: [ ^ self ].
+	dialog isOk
+		ifFalse: [ ^ self ].
 	"how would you do it differently?"
-	ImdbFilm new
-		name: dialog nameText text;
-		director: dialog director text; 
-		year: dialog yearNumber number.
+	ImdbFilm 
+		addFilm:
+			(ImdbFilm new
+				name: dialog nameText text;
+				director: dialog director text;
+				year: dialog yearNumber number).
 	"save is missing"
- 	self updatePresenter.
-	
+	self updatePresenter
 ]
 
 { #category : #initialization }
@@ -63,5 +67,7 @@ ImdbFilmListPresenter >> initializeWinddow: aWindowPresenter [
 { #category : #initialization }
 ImdbFilmListPresenter >> updatePresenter [
 	
-	"filmList items: ImdbFilm selectAll asOrderedCollection "
+	filmList items: ImdbFilm films
+
+	
 ]
