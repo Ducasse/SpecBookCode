@@ -19,10 +19,10 @@ ImdbFilmListPresenter class >> defaultSpec [
 
 { #category : #initialization }
 ImdbFilmListPresenter >> addFilm [
-	| dialog |
+	| dialog windowPresenter |
 	dialog := ImdbFilmPresenter newApplication: self application.
-	dialog openDialogWithSpec.
-	dialog isOk
+	windowPresenter := dialog openDialogWithSpec.
+	windowPresenter isOk
 		ifFalse: [ ^ self ].
 	"how would you do it differently?"
 	ImdbFilm 
