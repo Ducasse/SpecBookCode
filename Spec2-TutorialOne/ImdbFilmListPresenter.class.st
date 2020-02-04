@@ -49,19 +49,19 @@ ImdbFilmListPresenter >> initializePresenters [
 ]
 
 { #category : #initialization }
-ImdbFilmListPresenter >> initializeWinddow: aWindowPresenter [
-
-	aWindowPresenter 
+ImdbFilmListPresenter >> initializeWindow: aWindowPresenter [
+	aWindowPresenter
 		title: 'Mini IMDB';
-		initialExtent: 600@400;
-		toolBar: (self newToolBar
-						addItem: (SpToolBarButton new 
-										label: 'Add film' ;
-										icon: (self application iconNamed: #smallAdd);
-										action: [ self addFilm ];
-										yourself);
-									yourself)
-						
+		initialExtent: 600 @ 400;
+		toolBar:
+			(self newToolBar
+				addItem:
+					(SpToolBarButton new
+						label: 'Add film';
+						icon: (self application iconNamed: #smallAdd);
+						action: [ self addFilm ];
+						yourself);
+				yourself)
 ]
 
 { #category : #initialization }
