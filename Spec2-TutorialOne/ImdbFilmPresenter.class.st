@@ -10,17 +10,30 @@ Class {
 }
 
 { #category : #specs }
-ImdbFilmPresenter class >> defaultSpec [ 
-	^ SpGridLayout new 
-			add: 'Name' at: 1@1; add: #nameText at: 2@1;
-			add: 'Director' at: 1@2; add: #directorText at: 2@2;
-			add: 'Year' at: 1@3; add: #yearNumber at: 2@3;
-			yourself
+ImdbFilmPresenter class >> defaultSpec [
+	^ SpGridLayout new
+		beRowNotHomogeneous;
+		beColumnNotHomogeneous;
+		add: 'Name' at: 1 @ 1; add: #nameText at: 2 @ 1;
+		add: 'Director' at: 1 @ 2; add: #directorText at: 2 @ 2;
+		add: 'Year' at: 1 @ 3; add: #yearNumber at: 2 @ 3;
+		yourself
+	
 ]
 
 { #category : #accessing }
 ImdbFilmPresenter >> directorText [
 	^ directorText
+]
+
+{ #category : #initialization }
+ImdbFilmPresenter >> initializeDialogWindow: aDialogPresenter [
+	"super initializeDialogWindow: aDialogPresenter."
+	aDialogPresenter centered.
+	aDialogPresenter 
+		addButton: 'Cancel' do: [ :presenter | presenter close ];
+		addButton: 'Save' do: [ :presenter | presenter beOk; close ].
+
 ]
 
 { #category : #initialization }
