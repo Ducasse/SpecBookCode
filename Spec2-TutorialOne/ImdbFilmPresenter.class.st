@@ -45,6 +45,13 @@ ImdbFilmPresenter >> initializePresenters [
 		yourself
 ]
 
+{ #category : #initialization }
+ImdbFilmPresenter >> initializeWindow: aWindowPresenter [
+	aWindowPresenter
+		title: 'Film';
+		initialExtent: 400 @ 250
+]
+
 { #category : #accessing }
 ImdbFilmPresenter >> nameText [
 	^ nameText
