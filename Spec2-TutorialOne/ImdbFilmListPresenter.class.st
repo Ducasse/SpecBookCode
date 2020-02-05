@@ -20,16 +20,18 @@ ImdbFilmListPresenter class >> defaultSpec [
 { #category : #initialization }
 ImdbFilmListPresenter >> addFilm [
 	| dialog windowPresenter |
+	self halt.
 	dialog := ImdbFilmPresenter newApplication: self application.
-	windowPresenter := dialog openDialogWithSpec.
+	windowPresenter := dialog openModalWithSpec.
 	windowPresenter isOk
 		ifFalse: [ ^ self ].
 	"how would you do it differently?"
+	self halt.
 	ImdbFilm 
 		addFilm:
 			(ImdbFilm new
 				name: dialog nameText text;
-				director: dialog director text;
+				director: dialog directorText text;
 				year: dialog yearNumber number).
 	"save is missing"
 	self updatePresenter

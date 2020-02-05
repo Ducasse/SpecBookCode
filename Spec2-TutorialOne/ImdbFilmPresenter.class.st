@@ -38,9 +38,9 @@ ImdbFilmPresenter >> initializeDialogWindow: aDialogPresenter [
 
 { #category : #initialization }
 ImdbFilmPresenter >> initializePresenters [
-	nameText := self newTextInput.
-	directorText := self newTextInput.
-	yearNumber := self newNumberInput
+	nameText := self newTextInput autoAccept: true.
+	directorText := self newTextInput autoAccept: true.
+	yearNumber := self newNumberInput autoAccept: true;
 		rangeMinimum: 1900 maximum: Year current year;
 		yourself
 ]
