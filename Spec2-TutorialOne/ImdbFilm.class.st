@@ -20,13 +20,7 @@ ImdbFilm class >> addFilm: aFilm [
 { #category : #testing }
 ImdbFilm class >> films [
 
-	^ films
-]
-
-{ #category : #testing }
-ImdbFilm class >> initialize [ 
-	
-	films := OrderedCollection new
+	^ films ifNil: [ films := OrderedCollection new ]
 ]
 
 { #category : #testing }
