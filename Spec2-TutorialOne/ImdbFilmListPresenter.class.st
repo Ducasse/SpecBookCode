@@ -5,7 +5,8 @@ Class {
 	#name : #ImdbFilmListPresenter,
 	#superclass : #SpPresenter,
 	#instVars : [
-		'filmList'
+		'filmList',
+		'detail'
 	],
 	#category : #'Spec2-TutorialOne'
 }
@@ -14,19 +15,18 @@ Class {
 ImdbFilmListPresenter class >> defaultSpec [ 
 	^ SpBoxLayout newVertical
 			add: #filmList; 
+			add: #detail;
 			yourself
 ]
 
 { #category : #initialization }
 ImdbFilmListPresenter >> addFilm [
 	| dialog windowPresenter |
-	self halt.
 	dialog := ImdbFilmPresenter newApplication: self application.
 	windowPresenter := dialog openModalWithSpec.
 	windowPresenter isOk
 		ifFalse: [ ^ self ].
 	"how would you do it differently?"
-	self halt.
 	ImdbFilm 
 		addFilm:
 			(ImdbFilm new
@@ -46,7 +46,10 @@ ImdbFilmListPresenter >> initializePresenters [
 		addColumn: (SpStringTableColumn title: 'Year' evaluated: #year);
 		yourself.
 		
-	"why called from here?"
+	detail := self instantiate: ImdbFilmPresenter.
+	detail enabled: false.
+	
+	filmList transmitTo: detail.
 	self updatePresenter
 ]
 

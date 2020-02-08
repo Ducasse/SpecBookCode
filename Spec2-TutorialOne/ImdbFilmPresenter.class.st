@@ -21,6 +21,12 @@ ImdbFilmPresenter class >> defaultSpec [
 	
 ]
 
+{ #category : #initialization }
+ImdbFilmPresenter >> defineInputPorts [ 
+
+	^ { SpModelPort new }
+]
+
 { #category : #accessing }
 ImdbFilmPresenter >> directorText [
 	^ directorText
@@ -55,6 +61,14 @@ ImdbFilmPresenter >> initializeWindow: aWindowPresenter [
 { #category : #accessing }
 ImdbFilmPresenter >> nameText [
 	^ nameText
+]
+
+{ #category : #initialization }
+ImdbFilmPresenter >> setModel: aFilm [
+
+	nameText text: aFilm name.
+	directorText text: aFilm director.
+	yearNumber number: aFilm year.
 ]
 
 { #category : #accessing }
