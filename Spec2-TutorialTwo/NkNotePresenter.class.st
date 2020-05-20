@@ -13,7 +13,7 @@ Class {
 }
 
 { #category : #specs }
-NkNotePresenter class >> defaultSpec [ 
+NkNotePresenter class >> defaultLayout [
 	<spec>
 	^ SpBoxLayout newVertical
 			add: #filter expand: false;
@@ -23,6 +23,12 @@ NkNotePresenter class >> defaultSpec [
 				add: #contents;
 				yourself);
 			yourself
+]
+
+{ #category : #specs }
+NkNotePresenter class >> defaultSpec [ 
+	<spec>
+	^ self defaultLayout 
 ]
 
 { #category : #initialization }
