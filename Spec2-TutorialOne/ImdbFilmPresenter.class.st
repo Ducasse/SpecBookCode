@@ -10,7 +10,7 @@ Class {
 }
 
 { #category : #specs }
-ImdbFilmPresenter class >> defaultSpec [
+ImdbFilmPresenter class >> defaultLayout [
 	^ SpGridLayout new
 		beRowNotHomogeneous;
 		beColumnNotHomogeneous;
@@ -19,6 +19,19 @@ ImdbFilmPresenter class >> defaultSpec [
 		add: 'Year' at: 1 @ 3; add: #yearNumber at: 2 @ 3;
 		yourself
 	
+]
+
+{ #category : #specs }
+ImdbFilmPresenter class >> defaultSpec [
+
+	^ self defaultLayout
+]
+
+{ #category : #specs }
+ImdbFilmPresenter class >> example [
+
+	<sampleInstance>
+	^ self new openWithSpec
 ]
 
 { #category : #initialization }
