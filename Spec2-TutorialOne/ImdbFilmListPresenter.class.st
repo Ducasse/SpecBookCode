@@ -12,11 +12,16 @@ Class {
 }
 
 { #category : #specs }
-ImdbFilmListPresenter class >> defaultSpec [ 
+ImdbFilmListPresenter class >> defaultLayout [
 	^ SpBoxLayout newVertical
 			add: #filmList; 
 			add: #detail;
 			yourself
+]
+
+{ #category : #specs }
+ImdbFilmListPresenter class >> defaultSpec [ 
+	^ self defaultLayout
 ]
 
 { #category : #initialization }
