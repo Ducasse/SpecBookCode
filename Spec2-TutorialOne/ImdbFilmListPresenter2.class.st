@@ -24,15 +24,6 @@ ImdbFilmListPresenter2 class >> embeddedLayout [
 			yourself
 ]
 
-{ #category : #specs }
-ImdbFilmListPresenter2 class >> foo [ 
-
-	^ SpBoxLayout newVertical
-			add: #filmList; 
-			add: #detail;
-			yourself
-]
-
 { #category : #initialization }
 ImdbFilmListPresenter2 >> initializePresenters [
 
@@ -41,7 +32,7 @@ ImdbFilmListPresenter2 >> initializePresenters [
 		addColumn: (SpStringTableColumn title: 'Director' evaluated: #director);
 		addColumn: (SpStringTableColumn title: 'Year' evaluated: #year);
 		yourself.
-		
+	
 	detail := self instantiate: ImdbFilmPresenter.
 	detail enabled: false.
 	
