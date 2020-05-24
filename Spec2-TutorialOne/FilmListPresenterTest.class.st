@@ -9,7 +9,7 @@ FilmListPresenterTest >> testSelectingOneFilmDisplaysIt [
 
 	| list |
 	list := ImdbFilmListPresenter2 new.
-	list openWithSpec: #embeddedLayout.
+	list openWithSpec.
 	self assert: list detail nameText text isEmpty. 
 	list filmList clickAtIndex: 1.
 	self deny: list detail nameText text isEmpty. 

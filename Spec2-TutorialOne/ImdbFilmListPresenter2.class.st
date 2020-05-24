@@ -8,6 +8,15 @@ Class {
 }
 
 { #category : #specs }
+ImdbFilmListPresenter2 class >> aboveLayout [ 
+	"self new openWithSpec: #aboveLayout"
+	^ SpBoxLayout newVertical
+			add: #detail;
+			add: #filmList; 
+			yourself
+]
+
+{ #category : #specs }
 ImdbFilmListPresenter2 class >> defaultLayout [ 
 	^ SpBoxLayout newVertical
 			add: #filmList; 
@@ -16,11 +25,10 @@ ImdbFilmListPresenter2 class >> defaultLayout [
 ]
 
 { #category : #specs }
-ImdbFilmListPresenter2 class >> embeddedLayout [ 
-
+ImdbFilmListPresenter2 class >> listOnlyLayout [ 
+	"self new openWithSpec: #listOnlyLayout"
 	^ SpBoxLayout newVertical
 			add: #filmList; 
-			add: #detail;
 			yourself
 ]
 
