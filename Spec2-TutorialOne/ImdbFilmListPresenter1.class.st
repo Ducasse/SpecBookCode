@@ -8,7 +8,19 @@ Class {
 }
 
 { #category : #initialization }
-ImdbFilmListPresenter1 >> addFilm [ 
+ImdbFilmListPresenter1 >> addFilm [
+	| dialog windowPresenter |
+	dialog := ImdbFilmPresenter newApplication: self application.
+	windowPresenter := dialog openDialogWithSpec.
+	windowPresenter isOk
+		ifFalse: [ ^ self ].
+	ImdbFilm
+		addFilm:
+			(ImdbFilm new
+				name: dialog nameText text;
+				director: dialog director text;
+				year: dialog yearNumber number).
+	self updatePresenter
 	
 ]
 

@@ -1,3 +1,8 @@
+"
+| app |
+app := ImdbApp new. 
+(app newPresenter: ImdbFilmPresenter) openWithSpec.
+"
 Class {
 	#name : #ImdbFilmPresenter,
 	#superclass : #SpPresenter,

@@ -18,6 +18,11 @@ ImdbFilm class >> addFilm: aFilm [
 ]
 
 { #category : #testing }
+ImdbFilm class >> addFilms: aCollection [
+	films := aCollection
+]
+
+{ #category : #testing }
 ImdbFilm class >> films [
 
 	^ films ifNil: [ films := OrderedCollection new ]
@@ -28,6 +33,11 @@ ImdbFilm class >> isVoyageRoot [
 	"VOMemoryRepository new enableSingleton"
 	
 	^ true
+]
+
+{ #category : #testing }
+ImdbFilm class >> reset [ 
+	films := OrderedCollection new
 ]
 
 { #category : #accessing }
