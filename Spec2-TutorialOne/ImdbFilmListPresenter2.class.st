@@ -24,6 +24,15 @@ ImdbFilmListPresenter2 class >> embeddedLayout [
 			yourself
 ]
 
+{ #category : #specs }
+ImdbFilmListPresenter2 class >> foo [ 
+
+	^ SpBoxLayout newVertical
+			add: #filmList; 
+			add: #detail;
+			yourself
+]
+
 { #category : #initialization }
 ImdbFilmListPresenter2 >> initializePresenters [
 
@@ -36,7 +45,7 @@ ImdbFilmListPresenter2 >> initializePresenters [
 	detail := self instantiate: ImdbFilmPresenter.
 	detail enabled: false.
 	
-	filmList whenSelectionChangedDo: [ :selected | selected inspect ].
+	filmList whenSelectionChangedDo: [ :selectedItemMode | selectedItemMode isEmpty ifFalse: [detail setModel: selectedItemMode selectedItem]].
 
 	self updatePresenter
 ]
