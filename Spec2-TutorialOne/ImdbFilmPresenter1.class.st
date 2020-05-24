@@ -6,7 +6,7 @@ app := ImdbApp new.
 Class {
 	#name : #ImdbFilmPresenter1,
 	#superclass : #ImdbFilmPresenter0,
-	#category : #'Spec2-TutorialOne'
+	#category : #'Spec2-TutorialOne-Presenters'
 }
 
 { #category : #specs }

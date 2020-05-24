@@ -1,7 +1,7 @@
 Class {
 	#name : #ImdbFilmPresenter3,
 	#superclass : #ImdbFilmPresenter2,
-	#category : #'Spec2-TutorialOne'
+	#category : #'Spec2-TutorialOne-Presenters'
 }
 
 { #category : #initialization }

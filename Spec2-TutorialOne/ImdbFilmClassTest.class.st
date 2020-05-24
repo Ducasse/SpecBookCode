@@ -1,7 +1,7 @@
 Class {
 	#name : #ImdbFilmClassTest,
 	#superclass : #TestCase,
-	#category : #'Spec2-TutorialOne'
+	#category : #'Spec2-TutorialOne-Domain-Tests'
 }
 
 { #category : #tests }

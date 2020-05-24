@@ -8,7 +8,7 @@ Class {
 		'filmList',
 		'detail'
 	],
-	#category : #'Spec2-TutorialOne'
+	#category : #'Spec2-TutorialOne-Presenters'
 }
 
 { #category : #specs }

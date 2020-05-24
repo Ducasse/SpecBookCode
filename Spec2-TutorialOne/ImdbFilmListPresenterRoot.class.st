@@ -5,12 +5,17 @@ Class {
 		'filmList',
 		'detail'
 	],
-	#category : #'Spec2-TutorialOne'
+	#category : #'Spec2-TutorialOne-Presenters'
 }
 
 { #category : #specs }
 ImdbFilmListPresenterRoot class >> defaultSpec [ 
 	^ self defaultLayout
+]
+
+{ #category : #'as yet unclassified' }
+ImdbFilmListPresenterRoot >> detail [
+	^ detail
 ]
 
 { #category : #initialization }

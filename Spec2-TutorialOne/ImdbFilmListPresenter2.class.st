@@ -4,7 +4,7 @@ ImdbFilmListPresenter2 new openWithSpec
 Class {
 	#name : #ImdbFilmListPresenter2,
 	#superclass : #ImdbFilmListPresenter1,
-	#category : #'Spec2-TutorialOne'
+	#category : #'Spec2-TutorialOne-Presenters'
 }
 
 { #category : #specs }
@@ -22,6 +22,12 @@ ImdbFilmListPresenter2 class >> embeddedLayout [
 			add: #filmList; 
 			add: #detail;
 			yourself
+]
+
+{ #category : #accessing }
+ImdbFilmListPresenter2 >> filmList [
+
+	^ filmList
 ]
 
 { #category : #initialization }

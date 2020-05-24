@@ -4,7 +4,7 @@ ImdbFilmListPresenter1 new openWithSpec
 Class {
 	#name : #ImdbFilmListPresenter1,
 	#superclass : #ImdbFilmListPresenter0,
-	#category : #'Spec2-TutorialOne'
+	#category : #'Spec2-TutorialOne-Presenters'
 }
 
 { #category : #initialization }

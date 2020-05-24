@@ -9,7 +9,7 @@ Class {
 	#classInstVars : [
 		'films'
 	],
-	#category : #'Spec2-TutorialOne'
+	#category : #'Spec2-TutorialOne-Domain'
 }
 
 { #category : #testing }
