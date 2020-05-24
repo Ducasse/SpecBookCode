@@ -33,7 +33,7 @@ ImdbFilmListPresenter2 >> initializePresenters [
 		addColumn: (SpStringTableColumn title: 'Year' evaluated: #year);
 		yourself.
 	
-	detail := self instantiate: ImdbFilmPresenter.
+	detail := self instantiate: ImdbFilmPresenter3.
 	detail enabled: false.
 	
 	filmList whenSelectionChangedDo: [ :selectedItemMode | selectedItemMode isEmpty ifFalse: [detail setModel: selectedItemMode selectedItem]].
