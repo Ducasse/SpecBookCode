@@ -72,7 +72,7 @@ ImdbFilmListPresenter >> initializeWindow: aWindowPresenter [
 		toolBar:
 			(self newToolBar
 				addItem:
-					(SpToolBarButton new
+					(SpToolBarButtonPresenter new
 						label: 'Add film';
 						icon: (self application iconNamed: #smallAdd);
 						action: [ self addFilm ];

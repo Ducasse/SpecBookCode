@@ -2,6 +2,17 @@
 | app |
 app := ImdbApp new. 
 (app newPresenter: ImdbFilmPresenter) openWithSpec.
+
+
+| app |
+app := ImdbApp new. 
+(app newPresenter: ImdbFilmPresenter) openDialogWithSpec.
+""I do not understand the purpose of a dialog""
+
+| app |
+app := ImdbApp new. 
+(app newPresenter: ImdbFilmPresenter) openModalWithSpec.
+
 "
 Class {
 	#name : #ImdbFilmPresenter,
@@ -56,7 +67,7 @@ ImdbFilmPresenter >> initializeDialogWindow: aDialogPresenter [
 	aDialogPresenter centered.
 	aDialogPresenter 
 		addButton: 'Cancel' do: [ :presenter | presenter close ];
-		addButton: 'Save' do: [ :presenter | presenter beOk; close ].
+		addButton: 'Save a Film in the DB' do: [ :presenter | presenter beOk; close ].
 
 ]
 

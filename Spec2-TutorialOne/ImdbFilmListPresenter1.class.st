@@ -10,15 +10,15 @@ Class {
 { #category : #initialization }
 ImdbFilmListPresenter1 >> addFilm [
 	| dialog windowPresenter |
-	dialog := ImdbFilmPresenter newApplication: self application.
-	windowPresenter := dialog openDialogWithSpec.
+	dialog := ImdbFilmPresenter3 newApplication: self application.
+	windowPresenter := dialog openModalWithSpec.
 	windowPresenter isOk
 		ifFalse: [ ^ self ].
 	ImdbFilm
 		addFilm:
 			(ImdbFilm new
 				name: dialog nameText text;
-				director: dialog director text;
+				director: dialog directorText text;
 				year: dialog yearNumber number).
 	self updatePresenter
 	
