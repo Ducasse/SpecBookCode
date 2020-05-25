@@ -12,30 +12,38 @@ Class {
 	#category : #'Spec2-TutorialOne-Domain'
 }
 
-{ #category : #testing }
+{ #category : #db }
+ImdbFilm class >> ET [
+
+	^ self new 
+		name: 'E.T.';
+		director: 'Steven Spielberg';
+		year: '1982'; 
+		yourself
+]
+
+{ #category : #db }
+ImdbFilm class >> addET [
+	films add: self ET
+]
+
+{ #category : #db }
 ImdbFilm class >> addFilm: aFilm [
 	films add: aFilm
 ]
 
-{ #category : #testing }
+{ #category : #db }
 ImdbFilm class >> addFilms: aCollection [
 	films := aCollection
 ]
 
-{ #category : #testing }
+{ #category : #db }
 ImdbFilm class >> films [
 
 	^ films ifNil: [ films := OrderedCollection new ]
 ]
 
-{ #category : #testing }
-ImdbFilm class >> isVoyageRoot [
-	"VOMemoryRepository new enableSingleton"
-	
-	^ true
-]
-
-{ #category : #testing }
+{ #category : #db }
 ImdbFilm class >> reset [ 
 	films := OrderedCollection new
 ]
