@@ -5,4 +5,5 @@ To keep the code of the Spec book
 - Tutorial two is a start of a notetaker (unfinished)
 - Tutorial three is about some layout
 
-We should migrate all the code of the book to this repository.
+Have a look at this repo https://github.com/SquareBracketAssociates/CodeOfSpec20Book
+It is more update to date.
